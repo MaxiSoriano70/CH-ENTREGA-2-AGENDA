@@ -1,0 +1,12 @@
+[
+    {
+        "titulo": "Cocinar para Margo",
+        "descripcion": "Cocinar la comida para mi mascota.",
+        "estado": true
+    },
+    {
+        "titulo": "Hacer el desafio 2 js",
+        "descripcion": "Hacer el Entregable N°2 de Javascript.",
+        "estado": false
+    }
+]

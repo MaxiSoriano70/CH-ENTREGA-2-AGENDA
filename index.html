@@ -18,12 +18,56 @@
     <main class="mainAgenda fondoLight">
         <section class="tituloEventos">
             <h2>Tus tareas</h2>
-            <button class="btn btnPersonalized1 fw-bolder">Agregar evento</button>
+            <button id="boton-registrarse" class="btn btnPersonalized1 fw-bolder" aria-label="AgregarTarea" data-bs-toggle="modal" data-bs-target="#agregartareaModal">
+                Agregar Tarea
+            </button>
+            <!-- Modal Agregar Tarea-->
+            <section class="modal fade" id="agregartareaModal" tabindex="-1" aria-labelledby="agregartareaModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bgColorPrincipal">
+                <h5 class="modal-title text-white" id="agregartareaModal">
+                    Agregar Tarea
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body fondoLight">
+                <form id="formAgregarTarea">
+                    <div class="mb-3">
+                        <label for="tituloTarea" class="form-label fw-bolder">Nombre</label>
+                        <input type="text" class="form-control bgInput" id="tituloTarea" placeholder="Ingrese el titulo tarea"
+                            minlength="3" maxlength="25" name="TituloTarea" required />
+                        <div id="nombreAgregarError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label fw-bolder">Descripción</label>
+                        <div class="form-floating">
+                            <textarea class="form-control bgInput" placeholder="Ingrese la descripcion" id="descripcion"
+                                style="height: 100px" name="DescripcionTarea"></textarea>
+                            <label for="descripcion">Descripción</label>
+                        </div>
+                        <div id="descripcionAgregarError"></div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                    <button type="submit" id="botonRegistrarse" class="btn btnPersonalized3 mx-1 fw-bold"
+                        aria-label="Registrarse">
+                        Agregar Tarea
+                    </button>
+                    <button type="reset" class="btn btnPersonalized2 mx-1 fw-bold" aria-label="Cancelar">
+                        Cancelar
+                    </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            </div>
+            </section>
         </section>
         <section class="tareasPendientes">
             <article class="tusTareasPendientes">
                 <h3>Tareas Pendientes</h3>
-                <div class="contenedorDeTareas">
+                <div class="contenedorDeTareasPendientes">
                     <div class="tarea borderFondoLight">
                         <div class="contenedorRealizado">
                             <button type="button" class="btn btn-success fw-bolder"><i class="fa-solid fa-check"></i> Realizada</button>
@@ -33,46 +77,51 @@
                             <p class="descripcionTarea">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto labore soluta impedit voluptas rerum. Sint cupiditate quibusdam maiores sed praesentium laborum, tempora amet officia velit atque ducimus natus dignissimos distinctio.</p>
                         </div>
                         <div class="botonesDeAccion">
-                            <button type="button" class="btn btnPersonalized2"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                    <div class="tarea borderFondoLight">
-                        <div class="contenedorRealizado">
-                            <button type="button" class="btn btn-success fw-bolder"><i class="fa-solid fa-check"></i> Realizada</button>
-                        </div>
-                        <div class="contenidoTarea">
-                            <h4 class="tituloTarea">Ver el Steam de Auronplay</h4>
-                            <p class="descripcionTarea">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto labore soluta impedit voluptas rerum. Sint cupiditate quibusdam maiores sed praesentium laborum, tempora amet officia velit atque ducimus natus dignissimos distinctio.</p>
-                        </div>
-                        <div class="botonesDeAccion">
-                            <button type="button" class="btn btnPersonalized2"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                    <div class="tarea borderFondoLight">
-                        <div class="contenedorRealizado">
-                            <button type="button" class="btn btn-success fw-bolder"><i class="fa-solid fa-check"></i> Realizada</button>
-                        </div>
-                        <div class="contenidoTarea">
-                            <h4 class="tituloTarea">Ver el Steam de Auronplay</h4>
-                            <p class="descripcionTarea">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto labore soluta impedit voluptas rerum. Sint cupiditate quibusdam maiores sed praesentium laborum, tempora amet officia velit atque ducimus natus dignissimos distinctio.</p>
-                        </div>
-                        <div class="botonesDeAccion">
-                            <button type="button" class="btn btnPersonalized2"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                    <div class="tarea borderFondoLight">
-                        <div class="contenedorRealizado">
-                            <button type="button" class="btn btn-success fw-bolder"><i class="fa-solid fa-check"></i> Realizada</button>
-                        </div>
-                        <div class="contenidoTarea">
-                            <h4 class="tituloTarea">Ver el Steam de Auronplay</h4>
-                            <p class="descripcionTarea">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto labore soluta impedit voluptas rerum. Sint cupiditate quibusdam maiores sed praesentium laborum, tempora amet officia velit atque ducimus natus dignissimos distinctio.</p>
-                        </div>
-                        <div class="botonesDeAccion">
-                            <button type="button" class="btn btnPersonalized2"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button id="botonEditarTarea" class="btn btnPersonalized2 fw-bolder" aria-label="EditarTarea" data-bs-toggle="modal" data-bs-target="#editarTareaModal">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <!-- Modal Agregar Tarea-->
+                            <section class="modal fade" id="editarTareaModal" tabindex="-1" aria-labelledby="editarTareaModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bgColorPrincipal">
+                                <h5 class="modal-title text-white" id="editarTareaModal">
+                                    Editar Tarea
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body fondoLight">
+                                <form id="formEditarTarea">
+                                    <div class="mb-3">
+                                        <label for="tituloTareaEditar" class="form-label fw-bolder">Nombre</label>
+                                        <input type="text" class="form-control bgInput" id="tituloTareaEditar" placeholder="Ingrese el titulo tarea"
+                                            minlength="3" maxlength="25" name="TituloTareaEditar" required />
+                                        <div id="nombreEditarError"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="descripcionEditar" class="form-label fw-bolder">Descripción</label>
+                                        <div class="form-floating">
+                                            <textarea class="form-control bgInput" placeholder="Ingrese la descripcionEditar" id="descripcionEditar"
+                                                style="height: 100px" name="DescripcionEditarTarea"></textarea>
+                                            <label for="descripcion">Descripción</label>
+                                        </div>
+                                        <div id="descripcionEditarError"></div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                    <button type="submit" id="botonRegistrarse" class="btn btnPersonalized3 mx-1 fw-bold"
+                                        aria-label="Registrarse">
+                                        Guardar cambios
+                                    </button>
+                                    <button type="button" class="btn btnPersonalized2 mx-1 fw-bold" data-bs-dismiss="modal" aria-label="Close">
+                                        Cancelar
+                                    </button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                            </div>
+                            </section>
                             <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </div>
@@ -80,13 +129,38 @@
             </article>
             <article class="noTienesTareasPendiente borderFondoLight">
                 <i class="fa-solid fa-rectangle-xmark logoNoTienes"></i>
-                <span class="mensajeNotareas">No tienes tareas pendientes</span>
+                <span class="mensajeNoTareas">No tienes tareas pendientes</span>
+            </article>
+        </section>
+        <section class="tareasRealizadas">
+            <article class="tusTareasRealizadas">
+                <h3>Tareas Realizadas</h3>
+                <div class="contenedorDeTareasRealizadas">
+                    <div class="tareaRealizada borderFondoLight">
+                        <div class="contenedorVolverAPendiente">
+                            <button type="button" class="btn btn-secondary fw-bolder"><i class="fa-solid fa-rotate-right"></i> Volver a pendiente</button>
+                        </div>
+                        <div class="contenidoTareaRealizada">
+                            <h4 class="tituloTareaRealizada">Ver el Steam de Auronplay</h4>
+                            <p class="descripcionTareaRealizada">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto labore soluta impedit voluptas rerum. Sint cupiditate quibusdam maiores sed praesentium laborum, tempora amet officia velit atque ducimus natus dignissimos distinctio.</p>
+                        </div>
+                        <div class="botonEliminar">
+                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="noTienesTareasRealizada borderFondoLight">
+                <i class="fa-solid fa-rectangle-xmark logoNoTienes"></i>
+                <span class="mensajeNoTareasRealizada">No tienes tareas realizadas</span>
             </article>
         </section>
     </main>
     <footer class="footerAgenda">
-        <h4>Footer</h4>
+        <span class="textoFooter">&#9426 Copyright Maximiliano Soriano 2025</span>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./js/modelos/Tarea.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

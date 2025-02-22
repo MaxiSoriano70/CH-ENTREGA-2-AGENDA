@@ -98,7 +98,7 @@ body{
     flex-direction: column;
 }
 
-.contenedorDeTareas{
+.contenedorDeTareasPendientes{
     width: 100%;
     display: flex;
     align-items: center;
@@ -140,6 +140,11 @@ body{
     min-width: 0;
 }
 
+.tituloTareaRealizada,
+.descripcionTareaRealizada{
+    text-decoration: line-through;
+}
+
 @media (max-width: 770px) {
     .tarea {
         width: 100%;
@@ -166,7 +171,8 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
+    margin: 10px;
     border-radius: 10px;
 }
 
@@ -175,6 +181,120 @@ body{
     color: var(--color-danger);
 }
 
-.mensajeNotareas{
+.mensajeNoTareas{
     font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 770px) {
+    .noTienesTareasPendiente{
+        width: 100%;
+    }
+}
+
+.tareasRealizadas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+.tusTareasRealizadas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedorDeTareasRealizadas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tareaRealizada {
+    width: 75%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.contenedorVolverAPendiente,
+.botonEliminar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contenidoTareaRealizada {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+@media (max-width: 770px) {
+    .tareaRealizada {
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .tareaRealizada {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contenedorVolverAPendiente,
+    .contenidoTareaRealizada,
+    .botonEliminar {
+        grid-column: auto;
+    }
+    .botonEliminar {
+        justify-content: center;
+    }
+}
+
+.noTienesTareasRealizada{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.mensajeNoTareasRealizada{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 770px) {
+    .noTienesTareasRealizada{
+        width: 100%;
+    }
+}
+
+.footerAgenda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--color-2);
+}
+
+.textoFooter{
+    color: var(--color-blanco);
+    font-size: 18px;
+    font-weight: bold;
 }
