@@ -1,0 +1,75 @@
+:root {
+    --color-1: #1c7373;
+    --color-2: #005757;
+    --color-3: #223d58;
+    --color-4: #3e6389;
+    --color-5 : #ce1d49;
+    --color-6 : #b81941;
+    --color-fondo: #f1fcfa;
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-blanco: #fff;
+    --color-negro: #000;
+}
+
+.bgColorFondo{
+    background-color: var(--color-fondo);
+}
+
+.bgColorPrincipal {
+    background-color: var(--color-1);
+}
+
+.btnPersonalized1 {
+    background-color: var(--color-5);
+    color: var(--color-blanco);
+}
+
+.btnPersonalized1:hover {
+    background-color: var(--color-6);
+    color: var(--color-blanco);
+}
+
+.btnPersonalized2 {
+    background-color: var(--color-3);
+    color: var(--color-blanco);
+}
+
+.btnPersonalized2:hover {
+    background-color: var(--color-4);
+    color: var(--color-blanco);
+}
+
+.btnPersonalized3 {
+    background-color: var(--color-1);
+    color: var(--color-blanco);
+}
+
+.btnPersonalized3:hover {
+    background-color: var(--color-2);
+    color: var(--color-blanco);
+}
+
+.bgInput {
+    border: 1.8px solid var(--color-3);
+}
+
+.bgInput:focus {
+    border: 2px solid var(--color-3);
+    box-shadow: 0 0 0 0.2rem var(--color-3);
+}
+
+.error {
+    color: var(--color-danger);
+    font-size: 0.8rem;
+    margin: 5px 0px;
+    padding: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.visible {
+    visibility: visible;
+    display: block;
+}

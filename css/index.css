@@ -1,0 +1,180 @@
+:root {
+    --color-1: #1c7373;
+    --color-2: #005757;
+    --color-3: #223d58;
+    --color-4: #3e6389;
+    --color-5 : #ce1d49;
+    --color-6 : #b81941;
+    --color-fondo: #f1fcfa;
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-blanco: #fff;
+    --color-negro: #000;
+    --color-gris: #3d3d3d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fondoLight{
+    background-color: var(--color-fondo);
+    color: var(--color-negro);
+}
+
+.fondoDark{
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+}
+
+body{
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.headerAgenda{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--color-2);
+    color: var(--color-blanco);
+    padding: 15px 10px;
+}
+
+.logoHeader{
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.bienvenida{
+    margin: 0;
+}
+
+.light{
+    display: none;
+}
+
+.mainAgenda{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px 5px;
+}
+
+.tituloEventos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tareasPendientes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+.tusTareasPendientes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedorDeTareas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.borderFondoLight{
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-2);
+}
+
+.borderFondoDark{
+    background-color: var(--color-gris);
+    border: 1px solid var(--color-fondo);
+}
+
+.tarea {
+    width: 75%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.contenedorRealizado,
+.botonesDeAccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contenidoTarea {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+@media (max-width: 770px) {
+    .tarea {
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .tarea {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contenedorRealizado,
+    .contenidoTarea,
+    .botonesDeAccion {
+        grid-column: auto;
+    }
+    .botonesDeAccion {
+        justify-content: center;
+    }
+}
+
+.noTienesTareasPendiente{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.logoNoTienes{
+    font-size: 32px;
+    color: var(--color-danger);
+}
+
+.mensajeNotareas{
+    font-size: 24px;
+}
